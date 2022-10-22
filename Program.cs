@@ -6,6 +6,7 @@ void CountPositiveNumbers(int quantity)
     int number;
     for (int i = 0; i < quantity; i++)
     {
+        Console.Write("Введите число: ");
         number = int.Parse(Console.ReadLine());
         if (number > 0)
             counter++;
@@ -44,7 +45,7 @@ void FindIntersectDot(double[] equation1, double[] equation2)
             $"y={equation2[0]}x+{equation2[1]}: ({x};{y})");
     }
     else if (equation1[1] == equation2[1])
-        Console.WriteLine("Прямые равны.Деление на 0");
+        Console.WriteLine("Прямые равны");
     else
         Console.WriteLine("Прямые не пересекаются");
 
@@ -95,4 +96,6 @@ void PrintMatrix(int[,] matrix)
         Console.WriteLine();
     }
 }
-PrintMatrix(FillMatrix(7));
+Console.Write("Введите размерность матрицы: ");
+int n = int.Parse(Console.ReadLine());
+PrintMatrix(FillMatrix(n));
